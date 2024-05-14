@@ -1,12 +1,36 @@
 {
-    "开始任务": {
+    "下滑选择测试": {
         "next": [
-            "任务1_打开游戏"
+            "识别目标",
+            "sub滑一个单位"
         ]
     },
-    "任务1_打开游戏": {
-        "next": [
-            "打开游戏"
+    "识别目标": {
+        "recognition": "OCR",
+        "expected": "梦潜之径",
+        "target_offset": [
+            400,
+            70,
+            0,
+            0
+        ],
+        "action": "Click"
+    },
+    "sub滑一个单位": {
+        "is_sub": true,
+        "action": "Swipe",
+        "post_wait_freezes": 1,
+        "begin": [
+            500,
+            340,
+            30,
+            30
+        ],
+        "end": [
+            500,
+            190,
+            30,
+            30
         ]
     }
 }
