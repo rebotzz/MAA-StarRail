@@ -2,6 +2,14 @@
     "刷素材": {
         "post_wait_freezes": 2000,
         "next": [
+            "判断初始游戏界面",
+            "sub退出其他界面",
+            "刷素材"
+        ]
+    },
+    "刷素材初始化": {
+        "post_wait_freezes": 2000,
+        "next": [
             "判断是否在拟造花萼",
             "sub传送到拟造花萼"
         ]
@@ -99,6 +107,15 @@
             320,
             60
         ],
+        "post_wait_freezes": {
+            "time": 1000,
+            "roi": [
+                930,
+                630,
+                320,
+                60
+            ]
+        },
         "action": "Click",
         "next": [
             "体力不足",
@@ -124,6 +141,23 @@
                 40
             ]
         },
+        "next": [
+            "点击二倍速"
+        ]
+    },
+    "点击二倍速": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "二倍速1.png",
+            "二倍速2.png"
+        ],
+        "roi": [
+            1030,
+            20,
+            90,
+            40
+        ],
+        "action": "Click",
         "next": [
             "点击自动战斗"
         ]
@@ -154,6 +188,7 @@
         },
         "next": [
             "体力不足",
+            "无法战斗状态",
             "sub再来一次",
             "重复清理体力"
         ]
@@ -165,15 +200,23 @@
         "expected": "再来一次",
         "action": "Click"
     },
+    "无法战斗状态": {
+        "pre_wait_freezes": 1000,
+        "recognition": "OCR",
+        "expected": "无法战斗状态",
+        "next": [
+            "点击取消"
+        ]
+    },
     "体力不足": {
         "pre_wait_freezes": 1000,
         "recognition": "OCR",
         "expected": "开拓力补充",
         "next": [
-            "取消补充体力"
+            "点击取消"
         ]
     },
-    "取消补充体力": {
+    "点击取消": {
         "recognition": "OCR",
         "expected": "取消",
         "action": "Click",

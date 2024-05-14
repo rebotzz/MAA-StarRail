@@ -1,6 +1,13 @@
 {
     "刷遗物": {
         "next": [
+            "判断初始游戏界面",
+            "sub退出其他界面",
+            "刷遗物"
+        ]
+    },
+    "刷遗物初始化": {
+        "next": [
             "判断是否在侵蚀隧洞",
             "sub传送到侵蚀隧洞"
         ]
@@ -22,10 +29,10 @@
         ],
         "action": "Click",
         "next": [
-            "传送到侵蚀隧洞step1"
+            "默认传送到侵蚀隧洞step1"
         ]
     },
-    "传送到侵蚀隧洞step1": {
+    "默认传送到侵蚀隧洞step1": {
         "recognition": "TemplateMatch",
         "template": [
             "清体力列表.png",
@@ -33,10 +40,10 @@
         ],
         "action": "Click",
         "next": [
-            "传送到侵蚀隧洞step2"
+            "默认传送到侵蚀隧洞step2"
         ]
     },
-    "传送到侵蚀隧洞step2": {
+    "默认传送到侵蚀隧洞step2": {
         "recognition": "OCR",
         "expected": "侵蚀隧洞",
         "roi": [
@@ -48,10 +55,10 @@
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
-            "传送到侵蚀隧洞step3"
+            "默认传送到侵蚀隧洞step3"
         ]
     },
-    "传送到侵蚀隧洞step3": {
+    "默认传送到侵蚀隧洞step3": {
         "recognition": "OCR",
         "expected": "传送",
         "roi": [
