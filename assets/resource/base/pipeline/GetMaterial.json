@@ -1,0 +1,195 @@
+{
+    "刷素材": {
+        "post_wait_freezes": 2000,
+        "next": [
+            "判断是否在拟造花萼",
+            "sub传送到拟造花萼"
+        ]
+    },
+    "判断是否在拟造花萼": {
+        "recognition": "OCR",
+        "expected": "拟造花萼",
+        "action": "Click",
+        "next": [
+            "连打六次"
+        ]
+    },
+    "sub传送到拟造花萼": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "每日任务.png",
+            "每日任务2.png"
+        ],
+        "action": "Click",
+        "next": [
+            "传送到拟造花萼step1"
+        ]
+    },
+    "传送到拟造花萼step1": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "清体力列表.png",
+            "清体力列表2.png"
+        ],
+        "action": "Click",
+        "next": [
+            "传送到拟造花萼step2"
+        ]
+    },
+    "传送到拟造花萼step2": {
+        "recognition": "OCR",
+        "expected": "拟造花萼",
+        "order_by": "Vertical",
+        "index": 0,
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "传送到拟造花萼step3"
+        ]
+    },
+    "传送到拟造花萼step3": {
+        "recognition": "OCR",
+        "expected": "传送",
+        "order_by": "Vertical",
+        "index": 2,
+        "action": "Click"
+    },
+    "连打六次": {
+        "next": [
+            "是否六次",
+            "sub滑动拉满打六次"
+        ]
+    },
+    "是否六次": {
+        "recognition": "OCR",
+        "expected": "挑战次数6",
+        "roi": [
+            970,
+            540,
+            120,
+            40
+        ],
+        "next": [
+            "点击挑战"
+        ]
+    },
+    "sub滑动拉满打六次": {
+        "is_sub": true,
+        "action": "Swipe",
+        "begin": [
+            910,
+            570,
+            10,
+            10
+        ],
+        "end": [
+            1140,
+            570,
+            10,
+            10
+        ]
+    },
+    "点击挑战": {
+        "recognition": "OCR",
+        "expected": "挑战",
+        "roi": [
+            930,
+            630,
+            320,
+            60
+        ],
+        "action": "Click",
+        "next": [
+            "体力不足",
+            "点击开始挑战"
+        ]
+    },
+    "点击开始挑战": {
+        "recognition": "OCR",
+        "expected": "开始挑战",
+        "roi": [
+            930,
+            630,
+            280,
+            60
+        ],
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 1000,
+            "roi": [
+                1100,
+                20,
+                90,
+                40
+            ]
+        },
+        "next": [
+            "点击自动战斗"
+        ]
+    },
+    "点击自动战斗": {
+        "recognition": "TemplateMatch",
+        "template": "自动战斗.png",
+        "roi": [
+            1100,
+            20,
+            90,
+            40
+        ],
+        "action": "Click",
+        "next": [
+            "重复清理体力"
+        ]
+    },
+    "重复清理体力": {
+        "post_wait_freezes": {
+            "time": 5000,
+            "roi": [
+                1100,
+                20,
+                90,
+                40
+            ]
+        },
+        "next": [
+            "体力不足",
+            "sub再来一次",
+            "重复清理体力"
+        ]
+    },
+    "sub再来一次": {
+        "is_sub": true,
+        "pre_wait_freezes": 1000,
+        "recognition": "OCR",
+        "expected": "再来一次",
+        "action": "Click"
+    },
+    "体力不足": {
+        "pre_wait_freezes": 1000,
+        "recognition": "OCR",
+        "expected": "开拓力补充",
+        "next": [
+            "取消补充体力"
+        ]
+    },
+    "取消补充体力": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click",
+        "next": [
+            "退出关卡",
+            "点击关闭图标"
+        ]
+    },
+    "退出关卡": {
+        "recognition": "OCR",
+        "expected": "退出关卡",
+        "action": "Click"
+    },
+    "点击关闭图标": {
+        "recognition": "TemplateMatch",
+        "template": "关闭图标.png",
+        "action": "Click"
+    }
+}

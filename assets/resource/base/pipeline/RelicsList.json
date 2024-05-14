@@ -1,0 +1,172 @@
+{
+    "sub刷侵蚀隧洞_霜风之径": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "传送",
+        "roi": [
+            988,
+            236,
+            182,
+            431
+        ],
+        "order_by": "Vertical",
+        "index": 0,
+        "action": "Click"
+    },
+    "sub刷侵蚀隧洞_漂泊之径": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "传送",
+        "roi": [
+            988,
+            236,
+            182,
+            431
+        ],
+        "order_by": "Vertical",
+        "index": 1,
+        "action": "Click"
+    },
+    "sub刷侵蚀隧洞_睿治之径": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "传送",
+        "roi": [
+            988,
+            236,
+            182,
+            431
+        ],
+        "order_by": "Vertical",
+        "index": 2,
+        "action": "Click"
+    },
+    "sub刷侵蚀隧洞_梦潜之径": {
+        "is_sub": true,
+        "next": [
+            "是否有_梦潜之径",
+            "sub侵蚀隧洞向下滑动一个单位"
+        ]
+    },
+    "是否有_梦潜之径": {
+        "recognition": "OCR",
+        "expected": "梦潜之径",
+        "roi": [
+            450,
+            500,
+            720,
+            150
+        ],
+        "next": [
+            "点击侵蚀隧洞页末传送"
+        ]
+    },
+    "点击侵蚀隧洞页末传送": {
+        "recognition": "OCR",
+        "expected": "传送",
+        "roi": [
+            450,
+            500,
+            720,
+            150
+        ],
+        "action": "Click"
+    },
+    "sub侵蚀隧洞向下滑动一个单位": {
+        "is_sub": true,
+        "action": "Swipe",
+        "duration": 700,
+        "begin": [
+            500,
+            340,
+            30,
+            30
+        ],
+        "end": [
+            500,
+            190,
+            30,
+            30
+        ]
+    },
+    "sub刷侵蚀隧洞_圣颂之径": {
+        "is_sub": true,
+        "next": [
+            "是否有_圣颂之径",
+            "sub侵蚀隧洞向下滑动一个单位"
+        ]
+    },
+    "是否有_圣颂之径": {
+        "recognition": "OCR",
+        "expected": "圣颂之径",
+        "roi": [
+            450,
+            500,
+            720,
+            150
+        ],
+        "next": [
+            "点击侵蚀隧洞页末传送"
+        ]
+    },
+    "sub刷侵蚀隧洞_野焰之径": {
+        "is_sub": true,
+        "next": [
+            "是否有_野焰之径",
+            "sub侵蚀隧洞向下滑动一个单位"
+        ]
+    },
+    "是否有_野焰之径": {
+        "recognition": "OCR",
+        "expected": "野焰之径",
+        "roi": [
+            450,
+            500,
+            720,
+            150
+        ],
+        "next": [
+            "点击侵蚀隧洞页末传送"
+        ]
+    },
+    "sub刷侵蚀隧洞_药使之径": {
+        "is_sub": true,
+        "next": [
+            "是否有_药使之径",
+            "sub侵蚀隧洞向下滑动一个单位"
+        ]
+    },
+    "是否有_药使之径": {
+        "recognition": "OCR",
+        "expected": "药使之径",
+        "roi": [
+            450,
+            500,
+            720,
+            150
+        ],
+        "next": [
+            "点击侵蚀隧洞页末传送"
+        ]
+    },
+    "sub刷侵蚀隧洞_迅拳之径": {
+        "is_sub": true,
+        "next": [
+            "是否有_迅拳之径",
+            "sub侵蚀隧洞向下滑动一个单位"
+        ]
+    },
+    "是否有_迅拳之径": {
+        "recognition": "OCR",
+        "expected": "迅拳之径",
+        "roi": [
+            450,
+            500,
+            720,
+            150
+        ],
+        "next": [
+            "点击侵蚀隧洞页末传送"
+        ]
+    }
+}

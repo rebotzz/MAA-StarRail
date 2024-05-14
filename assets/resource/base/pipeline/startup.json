@@ -1,0 +1,45 @@
+{
+    "打开游戏": {
+        "next": [
+            "在游戏中",
+            "打开游戏app"
+        ]
+    },
+    "打开游戏app": {
+        "recognition": "TemplateMatch",
+        "template": "星穹铁道.png",
+        "action": "Click",
+        "post_wait_freezes": 20000,
+        "next": [
+            "打开游戏入口"
+        ]
+    },
+    "在游戏中": {
+        "recognition": "TemplateMatch",
+        "template": "每日任务.png"
+    },
+    "打开游戏入口": {
+        "next": [
+            "点击进入游戏",
+            "更新游戏",
+            "打开游戏入口"
+        ]
+    },
+    "更新游戏": {
+        "recognition": "OCR",
+        "expected": "更新",
+        "action": "Click",
+        "next": [
+            "打开游戏入口"
+        ]
+    },
+    "点击进入游戏": {
+        "recognition": "TemplateMatch",
+        "template": "进入游戏画面.png",
+        "action": "Click",
+        "post_wait_freezes": 10000,
+        "next": [
+            "刷素材"
+        ]
+    }
+}

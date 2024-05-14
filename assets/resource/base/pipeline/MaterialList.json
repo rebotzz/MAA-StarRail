@@ -1,0 +1,179 @@
+{
+    "sub进入每日任务/清体力列表": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "每日任务.png",
+            "每日任务2.png"
+        ],
+        "action": "Click",
+        "next": [
+            "进入清体力列表"
+        ]
+    },
+    "进入清体力列表": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "清体力列表.png",
+            "清体力列表2.png"
+        ],
+        "action": "Click"
+    },
+    "sub刷拟造花萼(金)": {
+        "is_sub": true,
+        "next": [
+            "拟造花萼(金)识别",
+            "sub进入每日任务/清体力列表"
+        ]
+    },
+    "拟造花萼(金)识别": {
+        "recognition": "OCR",
+        "expected": "拟造花萼",
+        "roi": [
+            114,
+            275,
+            304,
+            192
+        ],
+        "order_by": "Vertical",
+        "index": 0,
+        "action": "Click",
+        "post_wait_freezes": 700,
+        "next": [
+            "统一贝洛伯格拟造花萼金"
+        ]
+    },
+    "统一贝洛伯格拟造花萼金": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "贝洛伯格拟造花萼金1.png",
+            "贝洛伯格拟造花萼金2.png"
+        ],
+        "roi": [
+            480,
+            175,
+            70,
+            60
+        ],
+        "action": "Click",
+        "next": [
+            "选择拟造花萼(金)"
+        ]
+    },
+    "选择拟造花萼(金)": {
+        "next": [
+            "刷拟造花萼金_金币"
+        ]
+    },
+    "刷拟造花萼金_角色经验": {
+        "recognition": "OCR",
+        "expected": "传送",
+        "roi": [
+            988,
+            236,
+            182,
+            431
+        ],
+        "order_by": "Vertical",
+        "index": 0,
+        "action": "Click"
+    },
+    "刷拟造花萼金_武器经验": {
+        "recognition": "OCR",
+        "expected": "传送",
+        "roi": [
+            988,
+            236,
+            182,
+            431
+        ],
+        "order_by": "Vertical",
+        "index": 1,
+        "action": "Click"
+    },
+    "刷拟造花萼金_金币": {
+        "recognition": "OCR",
+        "expected": "传送",
+        "roi": [
+            988,
+            236,
+            182,
+            431
+        ],
+        "order_by": "Vertical",
+        "index": 2,
+        "action": "Click"
+    },
+    "sub刷拟造花萼(赤)": {
+        "is_sub": true,
+        "next": [
+            "拟造花萼(赤)识别",
+            "sub进入每日任务/清体力列表"
+        ]
+    },
+    "造花萼(赤)识别": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "拟造花萼",
+        "roi": [
+            114,
+            275,
+            304,
+            192
+        ],
+        "order_by": "Vertical",
+        "index": 1,
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "选择拟造花萼(赤)"
+        ]
+    },
+    "选择拟造花萼(赤)": {
+        "next": [
+            "刷拟造花萼赤_毁灭1"
+        ]
+    },
+    "刷拟造花萼赤_毁灭1": {
+        "recognition": "OCR",
+        "expected": "传送",
+        "roi": [
+            979,
+            174,
+            198,
+            461
+        ],
+        "order_by": "Vertical",
+        "index": 0,
+        "action": "Click",
+        "post_wait_freezes": 1000
+    },
+    "刷拟造花萼赤_毁灭2": {
+        "recognition": "OCR",
+        "expected": "传送",
+        "roi": [
+            979,
+            174,
+            198,
+            461
+        ],
+        "order_by": "Vertical",
+        "index": 1,
+        "action": "Click",
+        "post_wait_freezes": 1000
+    },
+    "刷拟造花萼赤_存护1": {
+        "recognition": "OCR",
+        "expected": "传送",
+        "roi": [
+            979,
+            174,
+            198,
+            461
+        ],
+        "order_by": "Vertical",
+        "index": 2,
+        "action": "Click",
+        "post_wait_freezes": 1000
+    }
+}
