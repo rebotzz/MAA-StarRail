@@ -1,0 +1,193 @@
+{
+    "派遣_勋礼_每日": {
+        "next": [
+            "判断初始游戏界面",
+            "退出其他界面"
+        ]
+    },
+    "退出其他界面": {
+        "recognition": "TemplateMatch",
+        "template": "关闭图标.png",
+        "next": [
+            "判断初始游戏界面",
+            "退出其他界面"
+        ]
+    },
+    "判断初始游戏界面": {
+        "recognition": "TemplateMatch",
+        "template": "手机图标.png",
+        "next": [
+            "每日派遣"
+        ]
+    },
+    "每日派遣": {
+        "next": [
+            "打开手机图标"
+        ]
+    },
+    "打开手机图标": {
+        "recognition": "TemplateMatch",
+        "template": "手机图标.png",
+        "action": "Click",
+        "post_wait_freezes": 700,
+        "next": [
+            "点击委托"
+        ]
+    },
+    "点击委托": {
+        "recognition": "OCR",
+        "expected": "委托",
+        "action": "Click",
+        "post_wait_freezes": 2000,
+        "next": [
+            "点击一键领取",
+            "关闭委托界面"
+        ]
+    },
+    "点击一键领取": {
+        "pre_wait_freezes": 1000,
+        "recognition": "OCR",
+        "expected": "一键领取",
+        "action": "Click",
+        "next": [
+            "点击再次派遣"
+        ]
+    },
+    "点击再次派遣": {
+        "pre_wait_freezes": 1000,
+        "recognition": "OCR",
+        "expected": "再次派遣",
+        "action": "Click",
+        "next": [
+            "关闭委托界面"
+        ]
+    },
+    "关闭委托界面": {
+        "pre_wait_freezes": 500,
+        "recognition": "TemplateMatch",
+        "template": "关闭图标.png",
+        "action": "Click",
+        "next": [
+            "关闭手机界面"
+        ]
+    },
+    "关闭手机界面": {
+        "recognition": "TemplateMatch",
+        "template": "关闭图标.png",
+        "action": "Click",
+        "next": [
+            "点击每日任务"
+        ]
+    },
+    "点击每日任务": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "每日任务.png",
+            "每日任务2.png"
+        ],
+        "action": "Click",
+        "next": [
+            "领取每日并退出"
+        ]
+    },
+    "领取每日并退出": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "每日任务列表1.png",
+            "每日任务列表2.png"
+        ],
+        "action": "Click",
+        "next": [
+            "领取奖励"
+        ]
+    },
+    "领取奖励": {
+        "pre_wait_freezes": 500,
+        "recognition": "OCR",
+        "expected": "领取",
+        "action": "Click",
+        "next": [
+            "领取奖励",
+            "领取每日任务星穹"
+        ]
+    },
+    "领取每日任务星穹": {
+        "recognition": "TemplateMatch",
+        "template": "每日奖励.png",
+        "action": "Click",
+        "next": [
+            "退出领取每日step1"
+        ]
+    },
+    "退出领取每日step1": {
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "next": [
+            "退出领取每日step2"
+        ]
+    },
+    "退出领取每日step2": {
+        "recognition": "TemplateMatch",
+        "template": "关闭图标.png",
+        "action": "Click",
+        "next": [
+            "领取无名勋礼step1"
+        ]
+    },
+    "领取无名勋礼step1": {
+        "recognition": "TemplateMatch",
+        "template": "无名勋礼.png",
+        "action": "Click",
+        "next": [
+            "领取无名勋礼step2"
+        ]
+    },
+    "领取无名勋礼step2": {
+        "recognition": "TemplateMatch",
+        "template": "无名勋礼任务.png",
+        "action": "Click",
+        "next": [
+            "领取无名勋礼step3"
+        ]
+    },
+    "领取无名勋礼step3": {
+        "recognition": "TemplateMatch",
+        "template": "无名勋礼任务一键领取.png",
+        "action": "Click",
+        "next": [
+            "领取无名勋礼step4"
+        ]
+    },
+    "领取无名勋礼step4": {
+        "pre_wait_freezes": 600,
+        "recognition": "TemplateMatch",
+        "template": "无名勋礼奖励.png",
+        "action": "Click",
+        "next": [
+            "领取无名勋礼step5"
+        ]
+    },
+    "领取无名勋礼step5": {
+        "recognition": "TemplateMatch",
+        "template": "无名勋礼奖励一键领取.png",
+        "action": "Click",
+        "next": [
+            "退出无名勋礼step1"
+        ]
+    },
+    "退出无名勋礼step1": {
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "next": [
+            "退出无名勋礼step2"
+        ]
+    },
+    "退出无名勋礼step2": {
+        "pre_wait_freezes": 1000,
+        "recognition": "TemplateMatch",
+        "template": "关闭图标.png",
+        "action": "Click"
+    }
+}
