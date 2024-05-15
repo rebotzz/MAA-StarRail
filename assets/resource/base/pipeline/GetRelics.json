@@ -9,7 +9,7 @@
     "刷遗物初始化": {
         "next": [
             "判断是否在侵蚀隧洞",
-            "sub传送到侵蚀隧洞"
+            "sub刷侵蚀隧洞_XX之径"
         ]
     },
     "判断是否在侵蚀隧洞": {
@@ -19,56 +19,5 @@
         "next": [
             "点击挑战"
         ]
-    },
-    "sub传送到侵蚀隧洞": {
-        "is_sub": true,
-        "recognition": "TemplateMatch",
-        "template": [
-            "每日任务.png",
-            "每日任务2.png"
-        ],
-        "action": "Click",
-        "next": [
-            "默认传送到侵蚀隧洞step1"
-        ]
-    },
-    "默认传送到侵蚀隧洞step1": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "清体力列表.png",
-            "清体力列表2.png"
-        ],
-        "action": "Click",
-        "next": [
-            "默认传送到侵蚀隧洞step2"
-        ]
-    },
-    "默认传送到侵蚀隧洞step2": {
-        "recognition": "OCR",
-        "expected": "侵蚀隧洞",
-        "roi": [
-            100,
-            150,
-            320,
-            500
-        ],
-        "action": "Click",
-        "post_wait_freezes": 1000,
-        "next": [
-            "默认传送到侵蚀隧洞step3"
-        ]
-    },
-    "默认传送到侵蚀隧洞step3": {
-        "recognition": "OCR",
-        "expected": "传送",
-        "roi": [
-            980,
-            150,
-            200,
-            500
-        ],
-        "order_by": "Vertical",
-        "index": 0,
-        "action": "Click"
     }
 }

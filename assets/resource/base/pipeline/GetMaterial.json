@@ -1,6 +1,5 @@
 {
     "刷素材": {
-        "post_wait_freezes": 2000,
         "next": [
             "判断初始游戏界面",
             "sub退出其他界面",
@@ -8,7 +7,6 @@
         ]
     },
     "刷素材初始化": {
-        "post_wait_freezes": 2000,
         "next": [
             "判断是否在拟造花萼",
             "sub传送到拟造花萼"
@@ -31,10 +29,10 @@
         ],
         "action": "Click",
         "next": [
-            "传送到拟造花萼step1"
+            "默认传送到拟造花萼step1"
         ]
     },
-    "传送到拟造花萼step1": {
+    "默认传送到拟造花萼step1": {
         "recognition": "TemplateMatch",
         "template": [
             "清体力列表.png",
@@ -42,10 +40,10 @@
         ],
         "action": "Click",
         "next": [
-            "传送到拟造花萼step2"
+            "默认传送到拟造花萼step2"
         ]
     },
-    "传送到拟造花萼step2": {
+    "默认传送到拟造花萼step2": {
         "recognition": "OCR",
         "expected": "拟造花萼",
         "order_by": "Vertical",
@@ -53,10 +51,10 @@
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
-            "传送到拟造花萼step3"
+            "默认传送到拟造花萼step3"
         ]
     },
-    "传送到拟造花萼step3": {
+    "默认传送到拟造花萼step3": {
         "recognition": "OCR",
         "expected": "传送",
         "order_by": "Vertical",
@@ -142,21 +140,51 @@
             ]
         },
         "next": [
+            "已经二倍数",
             "点击二倍速"
         ]
     },
-    "点击二倍速": {
+    "已经二倍数": {
         "recognition": "TemplateMatch",
-        "template": [
-            "二倍速1.png",
-            "二倍速2.png"
-        ],
+        "template": "二倍速1.png",
         "roi": [
             1030,
             20,
             90,
             40
         ],
+        "threshold": 0.95,
+        "pre_wait_freezes": {
+            "time": 1000,
+            "roi": [
+                1030,
+                20,
+                90,
+                40
+            ]
+        },
+        "next": [
+            "点击自动战斗"
+        ]
+    },
+    "点击二倍速": {
+        "recognition": "TemplateMatch",
+        "template": "二倍速2.png",
+        "roi": [
+            1030,
+            20,
+            90,
+            40
+        ],
+        "pre_wait_freezes": {
+            "time": 1000,
+            "roi": [
+                1030,
+                20,
+                90,
+                40
+            ]
+        },
         "action": "Click",
         "next": [
             "点击自动战斗"
@@ -178,7 +206,7 @@
     },
     "重复清理体力": {
         "post_wait_freezes": {
-            "time": 5000,
+            "time": 2000,
             "roi": [
                 1100,
                 20,
