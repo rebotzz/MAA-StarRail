@@ -1,24 +1,14 @@
 {
-    "sub刷拟造花萼(金)": {
+    "sub传送到拟造花萼(金)": {
         "is_sub": true,
         "next": [
             "拟造花萼(金)识别",
-            "sub进入每日任务/清体力列表"
+            "sub进入清体力列表",
+            "sub点击每日任务"
         ]
     },
-    "sub进入每日任务/清体力列表": {
+    "sub进入清体力列表": {
         "is_sub": true,
-        "recognition": "TemplateMatch",
-        "template": [
-            "每日任务.png",
-            "每日任务2.png"
-        ],
-        "action": "Click",
-        "next": [
-            "进入清体力列表"
-        ]
-    },
-    "进入清体力列表": {
         "recognition": "TemplateMatch",
         "template": [
             "清体力列表.png",
@@ -28,7 +18,7 @@
     },
     "拟造花萼(金)识别": {
         "recognition": "OCR",
-        "expected": "拟造花萼 金",
+        "expected": "金",
         "roi": [
             114,
             275,
@@ -57,16 +47,17 @@
         ],
         "action": "Click"
     },
-    "sub刷拟造花萼(赤)": {
+    "sub传送到拟造花萼(赤)": {
         "is_sub": true,
         "next": [
             "拟造花萼(赤)识别",
-            "sub进入每日任务/清体力列表"
+            "sub进入清体力列表",
+            "sub点击每日任务"
         ]
     },
     "拟造花萼(赤)识别": {
         "recognition": "OCR",
-        "expected": "拟造花萼 赤",
+        "expected": "赤",
         "roi": [
             114,
             275,

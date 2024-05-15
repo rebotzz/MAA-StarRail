@@ -9,7 +9,7 @@
     "刷素材初始化": {
         "next": [
             "判断是否在拟造花萼",
-            "sub传送到拟造花萼"
+            "sub传送到拟造花萼(赤)"
         ]
     },
     "判断是否在拟造花萼": {
@@ -19,47 +19,6 @@
         "next": [
             "连打六次"
         ]
-    },
-    "sub传送到拟造花萼": {
-        "is_sub": true,
-        "recognition": "TemplateMatch",
-        "template": [
-            "每日任务.png",
-            "每日任务2.png"
-        ],
-        "action": "Click",
-        "next": [
-            "默认传送到拟造花萼step1"
-        ]
-    },
-    "默认传送到拟造花萼step1": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "清体力列表.png",
-            "清体力列表2.png"
-        ],
-        "action": "Click",
-        "next": [
-            "默认传送到拟造花萼step2"
-        ]
-    },
-    "默认传送到拟造花萼step2": {
-        "recognition": "OCR",
-        "expected": "拟造花萼",
-        "order_by": "Vertical",
-        "index": 0,
-        "action": "Click",
-        "post_wait_freezes": 1000,
-        "next": [
-            "默认传送到拟造花萼step3"
-        ]
-    },
-    "默认传送到拟造花萼step3": {
-        "recognition": "OCR",
-        "expected": "传送",
-        "order_by": "Vertical",
-        "index": 2,
-        "action": "Click"
     },
     "连打六次": {
         "next": [
@@ -140,20 +99,27 @@
             ]
         },
         "next": [
+            "二倍速判断"
+        ]
+    },
+    "二倍速判断": {
+        "next": [
             "已经二倍数",
-            "点击二倍速"
+            "sub点击二倍速"
         ]
     },
     "已经二倍数": {
         "recognition": "TemplateMatch",
-        "template": "二倍速1.png",
+        "template": [
+            "二倍速判断/已经二倍数2.png"
+        ],
+        "threshold": 0.3,
         "roi": [
-            1030,
-            20,
-            90,
+            1080,
+            15,
+            35,
             40
         ],
-        "threshold": 0.95,
         "pre_wait_freezes": {
             "time": 1000,
             "roi": [
@@ -167,9 +133,10 @@
             "点击自动战斗"
         ]
     },
-    "点击二倍速": {
+    "sub点击二倍速": {
+        "is_sub": true,
         "recognition": "TemplateMatch",
-        "template": "二倍速2.png",
+        "template": "二倍速判断/二倍速2.png",
         "roi": [
             1030,
             20,
@@ -185,10 +152,7 @@
                 40
             ]
         },
-        "action": "Click",
-        "next": [
-            "点击自动战斗"
-        ]
+        "action": "Click"
     },
     "点击自动战斗": {
         "recognition": "TemplateMatch",
