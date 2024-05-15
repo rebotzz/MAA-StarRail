@@ -26,7 +26,6 @@
     "sub滑一个单位": {
         "is_sub": true,
         "action": "Swipe",
-        "post_wait_freezes": 1,
         "begin": [
             500,
             340,
