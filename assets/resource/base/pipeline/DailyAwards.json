@@ -6,20 +6,33 @@
             "派遣_勋礼_每日"
         ]
     },
-    "sub退出其他界面": {
-        "is_sub": true,
-        "recognition": "TemplateMatch",
-        "template": "关闭图标.png",
-        "action": "Click"
-    },
     "判断初始游戏界面": {
         "recognition": "TemplateMatch",
         "template": "手机图标.png",
+        "roi": [
+            5,
+            15,
+            60,
+            80
+        ],
         "next": [
-            "打开手机图标"
+            "每日点点点初始化"
         ]
     },
-    "打开手机图标": {
+    "每日点点点初始化": {
+        "next": [
+            "委托"
+        ]
+    },
+    "委托": {
+        "next": [
+            "委托处理",
+            "sub点击委托",
+            "sub点击手机"
+        ]
+    },
+    "sub点击手机": {
+        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "手机图标.png",
         "action": "Click",
@@ -28,28 +41,10 @@
             27,
             45,
             65
-        ],
-        "next": [
-            "点击委托",
-            "点击委托图标"
         ]
     },
-    "点击委托": {
-        "recognition": "OCR",
-        "expected": "委托",
-        "action": "Click",
-        "roi": [
-            1070,
-            260,
-            90,
-            90
-        ],
-        "next": [
-            "点击一键领取",
-            "关闭委托界面"
-        ]
-    },
-    "点击委托图标": {
+    "sub点击委托": {
+        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
             "委托图标1.png",
@@ -61,108 +56,199 @@
             260,
             90,
             90
+        ]
+    },
+    "委托处理": {
+        "recognition": "OCR",
+        "expected": "委托限制",
+        "roi": [
+            1000,
+            80,
+            115,
+            50
         ],
         "next": [
-            "点击一键领取",
+            "委托派遣中",
+            "委托完成"
+        ]
+    },
+    "委托派遣中": {
+        "recognition": "OCR",
+        "expected": "派遣中",
+        "roi": [
+            880,
+            630,
+            320,
+            75
+        ],
+        "next": [
             "关闭委托界面"
         ]
     },
-    "点击一键领取": {
-        "pre_wait_freezes": 1000,
+    "委托完成": {
         "recognition": "OCR",
         "expected": "一键领取",
-        "action": "Click",
+        "roi": [
+            120,
+            630,
+            270,
+            80
+        ],
         "next": [
-            "点击再次派遣"
+            "委托完成处理"
         ]
     },
-    "点击再次派遣": {
-        "pre_wait_freezes": 1000,
+    "委托完成处理": {
+        "next": [
+            "委托派遣中",
+            "sub一键领取委托",
+            "sub点击再次派遣"
+        ]
+    },
+    "sub一键领取委托": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "一键领取",
+        "roi": [
+            120,
+            630,
+            270,
+            80
+        ],
+        "action": "Click"
+    },
+    "sub点击再次派遣": {
+        "is_sub": true,
         "recognition": "OCR",
         "expected": "再次派遣",
-        "action": "Click",
-        "next": [
-            "关闭委托界面"
-        ]
+        "action": "Click"
     },
     "关闭委托界面": {
-        "pre_wait_freezes": 500,
-        "recognition": "TemplateMatch",
-        "template": "关闭图标.png",
-        "action": "Click",
         "next": [
-            "关闭手机界面"
+            "关闭委托界面成功",
+            "sub退出其他界面"
         ]
     },
-    "关闭手机界面": {
+    "关闭委托界面成功": {
         "recognition": "TemplateMatch",
-        "template": "关闭图标.png",
-        "action": "Click",
+        "template": "手机图标.png",
+        "roi": [
+            5,
+            15,
+            60,
+            80
+        ],
         "next": [
-            "点击每日任务"
+            "每日任务"
         ]
     },
-    "点击每日任务": {
+    "每日任务": {
+        "next": [
+            "每日任务界面判断",
+            "sub点击每日任务列表",
+            "sub点击每日任务"
+        ]
+    },
+    "每日任务界面判断": {
+        "recognition": "OCR",
+        "expected": [
+            "本日活跃度已满",
+            "领取"
+        ],
+        "next": [
+            "领取奖励",
+            "领取每日任务星穹",
+            "领取无名勋礼"
+        ]
+    },
+    "sub点击每日任务": {
+        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
             "每日任务.png",
             "每日任务2.png"
         ],
-        "action": "Click",
-        "next": [
-            "领取每日step1"
-        ]
+        "roi": [
+            980,
+            5,
+            65,
+            65
+        ],
+        "action": "Click"
     },
-    "领取每日step1": {
+    "sub点击每日任务列表": {
+        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
             "每日任务列表1.png",
             "每日任务列表2.png"
         ],
-        "action": "Click",
-        "next": [
-            "领取奖励",
-            "领取每日任务星穹",
-            "退出领取每日step2"
-        ]
+        "action": "Click"
     },
     "领取奖励": {
-        "pre_wait_freezes": 500,
         "recognition": "OCR",
         "expected": "领取",
         "action": "Click",
         "next": [
             "领取奖励",
             "领取每日任务星穹",
-            "退出领取每日step2"
+            "领取无名勋礼"
         ]
     },
     "领取每日任务星穹": {
-        "pre_wait_freezes": 500,
         "recognition": "TemplateMatch",
         "template": "每日奖励.png",
         "action": "Click",
         "next": [
-            "退出领取每日step1"
+            "领取每日任务星穹",
+            "领取无名勋礼"
         ]
     },
-    "退出领取每日step1": {
-        "recognition": "OCR",
-        "expected": "点击空白处关闭",
-        "action": "Click",
+    "领取无名勋礼": {
         "next": [
-            "退出领取每日step2"
+            "领取无名勋礼1/2",
+            "sub退出其他界面"
         ]
     },
-    "退出领取每日step2": {
+    "领取无名勋礼1/2": {
         "recognition": "TemplateMatch",
-        "template": "关闭图标.png",
-        "action": "Click",
+        "template": "手机图标.png",
+        "roi": [
+            5,
+            15,
+            60,
+            80
+        ],
         "next": [
-            "领取无名勋礼step1"
+            "无名勋礼任务界面判断",
+            "sub点击无名勋礼任务",
+            "sub点击无名勋礼图标"
         ]
     },
-    "领取无名勋礼step1": {
+    "无名勋礼任务界面判断": {
+        "recognition": "OCR",
+        "expected": "任务",
+        "roi": [
+            20,
+            0,
+            150,
+            80
+        ],
+        "next": [
+            "领取无名勋礼任务经验",
+            "领取无名勋礼2/2"
+        ]
+    },
+    "领取无名勋礼任务经验": {
+        "recognition": "TemplateMatch",
+        "template": "无名勋礼任务一键领取.png",
+        "action": "Click",
+        "next": [
+            "领取无名勋礼2/2"
+        ]
+    },
+    "sub点击无名勋礼图标": {
+        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
             "无名勋礼.png",
@@ -175,59 +261,70 @@
             70,
             70
         ],
-        "action": "Click",
-        "next": [
-            "领取无名勋礼step2"
-        ]
+        "action": "Click"
     },
-    "领取无名勋礼step2": {
+    "sub点击无名勋礼任务": {
+        "is_sub": true,
         "recognition": "TemplateMatch",
-        "template": "无名勋礼任务.png",
-        "action": "Click",
-        "next": [
-            "领取无名勋礼step3",
-            "点击关闭图标"
-        ]
+        "template": [
+            "无名勋礼任务.png",
+            "无名勋礼任务2.png"
+        ],
+        "roi": [
+            20,
+            170,
+            80,
+            80
+        ],
+        "action": "Click"
     },
-    "领取无名勋礼step3": {
+    "sub点击无名勋礼奖励图标": {
+        "is_sub": true,
         "recognition": "TemplateMatch",
-        "template": "无名勋礼任务一键领取.png",
-        "action": "Click",
+        "template": [
+            "无名勋礼奖励.png"
+        ],
+        "roi": [
+            20,
+            80,
+            80,
+            80
+        ],
+        "action": "Click"
+    },
+    "领取无名勋礼2/2": {
         "next": [
-            "领取无名勋礼step4",
-            "退出无名勋礼step1"
+            "无名勋礼奖励界面判断",
+            "sub点击无名勋礼奖励图标",
+            "sub点击无名勋礼图标"
         ]
     },
-    "领取无名勋礼step4": {
-        "pre_wait_freezes": 600,
-        "recognition": "TemplateMatch",
-        "template": "无名勋礼奖励.png",
-        "action": "Click",
+    "无名勋礼奖励界面判断": {
+        "recognition": "OCR",
+        "expected": "奖励",
+        "roi": [
+            20,
+            0,
+            150,
+            80
+        ],
         "next": [
-            "领取无名勋礼step5",
-            "退出无名勋礼step1"
+            "领取无名勋礼任务奖励",
+            "退出无名勋礼"
         ]
     },
-    "领取无名勋礼step5": {
+    "领取无名勋礼任务奖励": {
         "recognition": "TemplateMatch",
         "template": "无名勋礼奖励一键领取.png",
         "action": "Click",
         "next": [
-            "退出无名勋礼step1"
+            "退出无名勋礼"
         ]
     },
-    "退出无名勋礼step1": {
-        "recognition": "OCR",
-        "expected": "点击空白处关闭",
-        "action": "Click",
+    "退出无名勋礼": {
         "next": [
-            "退出无名勋礼step2"
+            "在游戏中_大世界",
+            "sub退出其他界面"
         ]
-    },
-    "退出无名勋礼step2": {
-        "pre_wait_freezes": 1000,
-        "recognition": "TemplateMatch",
-        "template": "关闭图标.png",
-        "action": "Click"
     }
 }

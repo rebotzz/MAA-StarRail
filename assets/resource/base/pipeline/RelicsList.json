@@ -57,21 +57,7 @@
             70,
             0,
             0
-        ],
-        "next": [
-            "点击侵蚀隧洞页末传送"
         ]
-    },
-    "点击侵蚀隧洞页末传送": {
-        "recognition": "OCR",
-        "expected": "传送",
-        "roi": [
-            450,
-            500,
-            720,
-            150
-        ],
-        "action": "Click"
     },
     "sub侵蚀隧洞向下滑动一个单位": {
         "is_sub": true,
@@ -89,47 +75,5 @@
             30,
             30
         ]
-    },
-    "sub刷侵蚀隧洞_霜风之径": {
-        "is_sub": true,
-        "recognition": "OCR",
-        "expected": "传送",
-        "roi": [
-            988,
-            236,
-            182,
-            431
-        ],
-        "order_by": "Vertical",
-        "index": 0,
-        "action": "Click"
-    },
-    "sub刷侵蚀隧洞_漂泊之径": {
-        "is_sub": true,
-        "recognition": "OCR",
-        "expected": "传送",
-        "roi": [
-            988,
-            236,
-            182,
-            431
-        ],
-        "order_by": "Vertical",
-        "index": 1,
-        "action": "Click"
-    },
-    "sub刷侵蚀隧洞_睿治之径": {
-        "is_sub": true,
-        "recognition": "OCR",
-        "expected": "传送",
-        "roi": [
-            988,
-            236,
-            182,
-            431
-        ],
-        "order_by": "Vertical",
-        "index": 2,
-        "action": "Click"
     }
 }

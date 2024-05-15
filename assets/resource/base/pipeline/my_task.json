@@ -6,11 +6,18 @@
         ]
     },
     "识别目标": {
-        "recognition": "OCR",
-        "expected": "梦潜之径",
+        "recognition": "TemplateMatch",
+        "template": "拟造花萼赤/沉沦黑曜.png",
+        "threshold": 0.9,
+        "roi": [
+            570,
+            160,
+            100,
+            500
+        ],
         "target_offset": [
-            400,
-            70,
+            450,
+            15,
             0,
             0
         ],

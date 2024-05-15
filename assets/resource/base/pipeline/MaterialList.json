@@ -1,4 +1,11 @@
 {
+    "sub刷拟造花萼(金)": {
+        "is_sub": true,
+        "next": [
+            "拟造花萼(金)识别",
+            "sub进入每日任务/清体力列表"
+        ]
+    },
     "sub进入每日任务/清体力列表": {
         "is_sub": true,
         "recognition": "TemplateMatch",
@@ -19,89 +26,35 @@
         ],
         "action": "Click"
     },
-    "sub刷拟造花萼(金)": {
-        "is_sub": true,
-        "next": [
-            "拟造花萼(金)识别",
-            "sub进入每日任务/清体力列表"
-        ]
-    },
     "拟造花萼(金)识别": {
         "recognition": "OCR",
-        "expected": "拟造花萼",
+        "expected": "拟造花萼 金",
         "roi": [
             114,
             275,
             304,
             192
         ],
-        "order_by": "Vertical",
-        "index": 0,
         "action": "Click",
-        "post_wait_freezes": 700,
         "next": [
-            "统一贝洛伯格拟造花萼金"
+            "拟造花萼金下滑选择刷取素材"
         ]
     },
-    "统一贝洛伯格拟造花萼金": {
+    "拟造花萼金下滑选择刷取素材": {
+        "next": [
+            "拟造花萼(金)素材选择",
+            "sub滑一个单位"
+        ]
+    },
+    "拟造花萼(金)素材选择": {
         "recognition": "TemplateMatch",
-        "template": [
-            "贝洛伯格拟造花萼金1.png",
-            "贝洛伯格拟造花萼金2.png"
+        "template": "拟造花萼金/信用点.png",
+        "target_offset": [
+            450,
+            0,
+            0,
+            0
         ],
-        "roi": [
-            480,
-            175,
-            70,
-            60
-        ],
-        "action": "Click",
-        "next": [
-            "选择拟造花萼(金)"
-        ]
-    },
-    "选择拟造花萼(金)": {
-        "next": [
-            "刷拟造花萼金_金币"
-        ]
-    },
-    "刷拟造花萼金_角色经验": {
-        "recognition": "OCR",
-        "expected": "传送",
-        "roi": [
-            988,
-            236,
-            182,
-            431
-        ],
-        "order_by": "Vertical",
-        "index": 0,
-        "action": "Click"
-    },
-    "刷拟造花萼金_武器经验": {
-        "recognition": "OCR",
-        "expected": "传送",
-        "roi": [
-            988,
-            236,
-            182,
-            431
-        ],
-        "order_by": "Vertical",
-        "index": 1,
-        "action": "Click"
-    },
-    "刷拟造花萼金_金币": {
-        "recognition": "OCR",
-        "expected": "传送",
-        "roi": [
-            988,
-            236,
-            182,
-            431
-        ],
-        "order_by": "Vertical",
-        "index": 2,
         "action": "Click"
     },
     "sub刷拟造花萼(赤)": {
@@ -113,66 +66,40 @@
     },
     "拟造花萼(赤)识别": {
         "recognition": "OCR",
-        "expected": "拟造花萼",
+        "expected": "拟造花萼 赤",
         "roi": [
             114,
             275,
             304,
             192
         ],
-        "order_by": "Vertical",
-        "index": 1,
         "action": "Click",
-        "post_wait_freezes": 1000,
         "next": [
-            "选择拟造花萼(赤)"
+            "拟造花萼赤下滑选择刷取素材"
         ]
     },
-    "选择拟造花萼(赤)": {
+    "拟造花萼赤下滑选择刷取素材": {
         "next": [
-            "刷拟造花萼赤_毁灭1"
+            "拟造花萼(赤)素材选择",
+            "sub滑一个单位"
         ]
     },
-    "刷拟造花萼赤_毁灭1": {
-        "recognition": "OCR",
-        "expected": "传送",
+    "拟造花萼(赤)素材选择": {
+        "recognition": "TemplateMatch",
+        "template": "拟造花萼赤/净世残刃.png",
+        "threshold": 0.9,
         "roi": [
-            979,
-            174,
-            198,
-            461
+            570,
+            160,
+            100,
+            500
         ],
-        "order_by": "Vertical",
-        "index": 0,
-        "action": "Click",
-        "post_wait_freezes": 1000
-    },
-    "刷拟造花萼赤_毁灭2": {
-        "recognition": "OCR",
-        "expected": "传送",
-        "roi": [
-            979,
-            174,
-            198,
-            461
+        "target_offset": [
+            450,
+            15,
+            0,
+            0
         ],
-        "order_by": "Vertical",
-        "index": 1,
-        "action": "Click",
-        "post_wait_freezes": 1000
-    },
-    "刷拟造花萼赤_存护1": {
-        "recognition": "OCR",
-        "expected": "传送",
-        "roi": [
-            979,
-            174,
-            198,
-            461
-        ],
-        "order_by": "Vertical",
-        "index": 2,
-        "action": "Click",
-        "post_wait_freezes": 1000
+        "action": "Click"
     }
 }
