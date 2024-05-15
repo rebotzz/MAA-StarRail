@@ -1,33 +1,14 @@
 {
-    "sub刷侵蚀隧洞_XX之径": {
+    "sub传送到侵蚀隧洞_XX之径": {
         "is_sub": true,
         "next": [
-            "传送到侵蚀隧洞"
+            "判断是否在侵蚀隧洞",
+            "判断是否在侵蚀隧洞选择界面",
+            "sub点击清体力列表",
+            "sub点击每日任务"
         ]
     },
-    "传送到侵蚀隧洞": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "每日任务.png",
-            "每日任务2.png"
-        ],
-        "action": "Click",
-        "next": [
-            "传送到侵蚀隧洞step1"
-        ]
-    },
-    "传送到侵蚀隧洞step1": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "清体力列表.png",
-            "清体力列表2.png"
-        ],
-        "action": "Click",
-        "next": [
-            "侵蚀隧洞滑动选择"
-        ]
-    },
-    "侵蚀隧洞滑动选择": {
+    "判断是否在侵蚀隧洞选择界面": {
         "recognition": "OCR",
         "expected": "侵蚀隧洞",
         "roi": [
@@ -37,27 +18,33 @@
             500
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "侵蚀隧洞下滑选择"
         ]
     },
     "侵蚀隧洞下滑选择": {
         "next": [
-            "是否有_XX之径",
+            "侵蚀隧洞素材选择",
             "sub侵蚀隧洞向下滑动一个单位"
         ]
     },
-    "是否有_XX之径": {
-        "recognition": "OCR",
-        "expected": "睿治之径",
-        "action": "Click",
+    "侵蚀隧洞素材选择": {
+        "recognition": "TemplateMatch",
+        "template": "侵蚀隧洞/梦潜之径.png",
+        "threshold": 0.9,
+        "roi": [
+            570,
+            160,
+            100,
+            500
+        ],
         "target_offset": [
-            400,
-            70,
+            450,
+            15,
             0,
             0
-        ]
+        ],
+        "action": "Click"
     },
     "sub侵蚀隧洞向下滑动一个单位": {
         "is_sub": true,
@@ -74,6 +61,20 @@
             190,
             30,
             30
+        ]
+    },
+    "侵蚀隧洞素材选择_old文字方法": {
+        "recognition": "OCR",
+        "expected": [
+            "睿治之径",
+            "备注: 有缺陷,文字出现但是传送图标可能没出现"
+        ],
+        "action": "Click",
+        "target_offset": [
+            400,
+            70,
+            0,
+            0
         ]
     }
 }

@@ -3,6 +3,7 @@
         "next": [
             "在游戏中_大世界",
             "sub打开游戏app",
+            "sub点击确认",
             "sub点击空白处",
             "sub点击关闭图标",
             "sub退出模拟宇宙/忘却之庭",
@@ -42,6 +43,12 @@
         "is_sub": true,
         "recognition": "OCR",
         "expected": "更新",
+        "action": "Click"
+    },
+    "sub点击确认": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "确认",
         "action": "Click"
     },
     "sub点击关闭图标": {

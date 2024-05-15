@@ -9,15 +9,27 @@
     "刷遗物初始化": {
         "next": [
             "判断是否在侵蚀隧洞",
-            "sub刷侵蚀隧洞_XX之径"
+            "sub点击大地图侵蚀隧洞副本",
+            "sub传送到侵蚀隧洞_XX之径"
         ]
     },
     "判断是否在侵蚀隧洞": {
         "recognition": "OCR",
         "expected": "侵蚀隧洞",
-        "action": "Click",
+        "roi": [
+            5,
+            5,
+            240,
+            80
+        ],
         "next": [
             "点击挑战"
         ]
+    },
+    "sub点击大地图侵蚀隧洞副本": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "侵蚀隧洞",
+        "action": "Click"
     }
 }
