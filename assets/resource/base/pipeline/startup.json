@@ -2,7 +2,6 @@
     "打开游戏": {
         "next": [
             "在游戏中_大世界",
-            "sub打开游戏app",
             "sub点击确认",
             "sub点击空白处",
             "sub点击关闭图标",
@@ -10,8 +9,14 @@
             "sub点击进入游戏",
             "sub更新游戏",
             "sub点击领取月卡",
+            "sub启动崩坏星穹铁道",
             "打开游戏"
         ]
+    },
+    "sub启动崩坏星穹铁道": {
+        "is_sub": true,
+        "action": "StartApp",
+        "package": "com.miHoYo.hkrpg/com.mihoyo.combosdk.ComboSDKActivity"
     },
     "sub退出其他界面": {
         "is_sub": true,
@@ -23,7 +28,7 @@
             "sub点击领取月卡"
         ]
     },
-    "sub打开游戏app": {
+    "sub点击游戏ico": {
         "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "星穹铁道.png",
