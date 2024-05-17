@@ -43,9 +43,9 @@ tips:
 
 ## 开发相关
 
-制作模板大佬的视频: <https://www.bilibili.com/video/BV1yr421E7MW/?spm_id_from=333.1007.top_right_bar_window_dynamic.content.click&vd_source=6e09cf2065036c65f27064c6983d6b47>
+制作模板大佬的视频: https://www.bilibili.com/video/BV1yr421E7MW/?spm_id_from=333.1007.top_right_bar_window_dynamic.content.click&vd_source=6e09cf2065036c65f27064c6983d6b47
 
-MAA教程地址: <https://github.com/rebotzz/MaaFramework/blob/main/docs/zh_cn/1.1-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.md>
+MAA教程地址: https://github.com/rebotzz/MaaFramework/blob/main/docs/zh_cn/1.1-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.md
 
 #### MAA星穹轨道目前功能还很基础,有的功能还不稳定,大家一起开发吧,期待未来功能会越来越多,越稳定
 
