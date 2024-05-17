@@ -5,12 +5,12 @@
             "type": "Adb"
         },
         {
-            "name": "桌面端 待完成",
+            "name": "桌面端 待完成2",
             "type": "Win32",
             "win32": {
                 "method": "Search",
                 "class_name": ".*",
-                "window_name": "Visual Studio"
+                "window_name": "崩坏：星穹铁道"
             }
         }
     ],
@@ -26,6 +26,10 @@
         {
             "name": "启动游戏",
             "entry": "打开游戏"
+        },
+        {
+            "name": "桌面端启动游戏",
+            "entry": "win32打开游戏"
         },
         {
             "name": "一键刷:拟造花萼(金)",
